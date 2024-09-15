@@ -3,7 +3,7 @@ from apecs.settings.util import get_env_read_file
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-get_env_read_file("DJANGO_SECRET_KEY")
+SECRET_KEY = get_env_read_file("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = get_env_read_file("DJANGO_DEBUG", default=False)
