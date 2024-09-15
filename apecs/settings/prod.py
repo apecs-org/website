@@ -17,6 +17,9 @@ except AttributeError:
         "The 'APECS_ALLOWED_HOSTS' environment variable has to be specified"
     )
 
+PREFERRED_SCHEME = "https"
+CSRF_TRUSTED_ORIGINS = [f"{PREFERRED_SCHEME}://{host}" for host in ALLOWED_HOSTS]
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
