@@ -671,15 +671,18 @@ tornado = ["tornado (>=0.2)"]
 
 [[package]]
 name = "idna"
-version = "3.8"
+version = "3.9"
 description = "Internationalized Domain Names in Applications (IDNA)"
 category = "main"
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "idna-3.8-py3-none-any.whl", hash = "sha256:050b4e5baadcd44d760cedbd2b8e639f2ff89bbc7a5730fcc662954303377aac"},
-    {file = "idna-3.8.tar.gz", hash = "sha256:d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603"},
+    {file = "idna-3.9-py3-none-any.whl", hash = "sha256:69297d5da0cc9281c77efffb4e730254dd45943f45bbfb461de5991713989b1e"},
+    {file = "idna-3.9.tar.gz", hash = "sha256:e5c5dafde284f26e9e0f28f6ea2d6400abd5ca099864a67f576f3981c6476124"},
 ]
+
+[package.extras]
+all = ["flake8 (>=7.1.1)", "mypy (>=1.11.2)", "pytest (>=8.3.2)", "ruff (>=0.6.2)"]
 
 [[package]]
 name = "jmespath"
@@ -961,6 +964,30 @@ sentry = ["django", "sentry-sdk"]
 test = ["coverage", "django", "flake8", "freezegun (==0.3.15)", "mock (>=2.0.0)", "pylint", "pytest", "pytest-timeout"]
 
 [[package]]
+name = "psycopg"
+version = "3.2.1"
+description = "PostgreSQL database adapter for Python"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "psycopg-3.2.1-py3-none-any.whl", hash = "sha256:ece385fb413a37db332f97c49208b36cf030ff02b199d7635ed2fbd378724175"},
+    {file = "psycopg-3.2.1.tar.gz", hash = "sha256:dc8da6dc8729dacacda3cc2f17d2c9397a70a66cf0d2b69c91065d60d5f00cb7"},
+]
+
+[package.dependencies]
+typing-extensions = ">=4.4"
+tzdata = {version = "*", markers = "sys_platform == \"win32\""}
+
+[package.extras]
+binary = ["psycopg-binary (==3.2.1)"]
+c = ["psycopg-c (==3.2.1)"]
+dev = ["ast-comments (>=1.1.2)", "black (>=24.1.0)", "codespell (>=2.2)", "dnspython (>=2.1)", "flake8 (>=4.0)", "mypy (>=1.6)", "types-setuptools (>=57.4)", "wheel (>=0.37)"]
+docs = ["Sphinx (>=5.0)", "furo (==2022.6.21)", "sphinx-autobuild (>=2021.3.14)", "sphinx-autodoc-typehints (>=1.12)"]
+pool = ["psycopg-pool"]
+test = ["anyio (>=4.0)", "mypy (>=1.6)", "pproxy (>=2.7)", "pytest (>=6.2.5)", "pytest-cov (>=3.0)", "pytest-randomly (>=3.5)"]
+
+[[package]]
 name = "pycparser"
 version = "2.22"
 description = "C parser in Python"
@@ -1168,6 +1195,18 @@ files = [
 docs = ["mkdocs (>=1.1,<1.2)", "mkdocs-material (>=6.2,<6.3)"]
 
 [[package]]
+name = "typing-extensions"
+version = "4.12.2"
+description = "Backported and Experimental Type Hints for Python 3.8+"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "typing_extensions-4.12.2-py3-none-any.whl", hash = "sha256:04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d"},
+    {file = "typing_extensions-4.12.2.tar.gz", hash = "sha256:1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"},
+]
+
+[[package]]
 name = "tzdata"
 version = "2024.1"
 description = "Provider of IANA time zone data"
@@ -1348,4 +1387,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "12b59234ca05d92c56fc53f53f28d4f0d51d10088c4abc8e850d30410e4dc699"
+content-hash = "62ad8e76c526d94e25982afbeab53f083bacee095804324cb7f418d73f0effbd"
