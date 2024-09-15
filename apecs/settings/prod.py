@@ -19,7 +19,7 @@ except AttributeError:
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.contrib.gis.db.backends.postgis",
+        "ENGINE": "django.db.backends.postgresql",
         "USER": get_env_read_file("APECS_DB_USER"),
         "NAME": get_env_read_file("APECS_DB_NAME"),
         "PASSWORD": get_env_read_file("APECS_DB_PASSWORD"),
