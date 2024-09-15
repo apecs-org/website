@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "apecs"
+version = "0.1.0"
+description = ""
+authors = ["Axel Schlindwein <axel.schlindwein@uit.no>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^5.0"
+wagtail = "^6.2"
+django-htmx = "^1.13.0"
+posthog = "^3.6.5"
+sentry-sdk = "^2.14.0"
+gunicorn = "^23.0.0"
+gevent = "^24.2.1"
+boto3 = "^1.35.18"
+django-storages = "^1.14.4"
+whitenoise = "^6.7.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

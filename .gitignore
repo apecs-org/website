@@ -1,0 +1,8 @@
+node_modules/
+
+apecs/static/dist/
+apecs/static/whitenoise/
+
+apecs/db.sqlite3
+
+.idea

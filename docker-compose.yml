@@ -1,0 +1,27 @@
+services:
+  redis:
+    image: redis
+    container_name: redis
+    restart: unless-stopped
+    ports:
+      - 6379:6379
+  postgres:
+    image: postgres:14-alpine
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "root" ]
+      timeout: 30s
+      interval: 10s
+      retries: 10
+    environment:
+      POSTGRES_PASSWORD: 'admin'
+      POSTGRES_USER: 'apecs'
+      POSTGRES_DB: 'apecs'
+    volumes:
+      - apecs-data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+
+volumes:
+  apecs-data:
+    external: true
