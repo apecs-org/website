@@ -17,7 +17,7 @@ gevent = "^24.2.1"
 boto3 = "^1.35.18"
 django-storages = "^1.14.4"
 whitenoise = "^6.7.0"
-psycopg = "^3.2.1"
+psycopg2-binary = "^2.9.9"
 
 
 [build-system]
