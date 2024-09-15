@@ -1,5 +1,5 @@
 from apecs.settings.base import * # noqa
-from util import get_env_read_file
+from apecs.settings.util import get_env_read_file
 
 
 # SECURITY WARNING: keep the secret key used in production secret!

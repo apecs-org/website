@@ -6,3 +6,5 @@ apecs/static/whitenoise/
 apecs/db.sqlite3
 
 .idea
+**/**/__pycache__/
+**/**/.DS_Store
