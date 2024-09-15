@@ -6,7 +6,7 @@ from apecs.settings.util import get_env_read_file
 get_env_read_file("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = get_env_read_file("DJANGO_DEBUG", default=False)
 
 try:
     ALLOWED_HOSTS = os.environ.get("APECS_ALLOWED_HOSTS").split(",")
