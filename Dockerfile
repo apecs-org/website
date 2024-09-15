@@ -47,7 +47,7 @@ RUN python -m poetry install
 
 COPY --from=static --chown=apecs /usr/src/apecs ./
 
-RUN python -m poetry run python manage.py collectstatic --no-input && rm -rf apecs/*/static
+RUN APECS_ALLOWED_HOSTS="" python -m poetry run python manage.py collectstatic --no-input && rm -rf apecs/*/static
 
 RUN chmod +x ./docker-entrypoint.sh
 
