@@ -1,0 +1,55 @@
+name: Test
+
+on:
+  push:
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: test_db
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      DATABASE_URL: postgres://postgres:postgres@localhost:5432/test_db
+      DJANGO_SETTINGS_MODULE: apecs.settings.test
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Python stage of Dockerfile
+        run: |
+          docker build --target python -t apecs-python .
+
+      - name: Run Django migrations
+        run: |
+          docker run --rm \
+            --env DATABASE_URL=${{ env.DATABASE_URL }} \
+            --env DJANGO_SETTINGS_MODULE=${{ env.DJANGO_SETTINGS_MODULE }} \
+            apecs-python \
+            poetry run python manage.py migrate
+
+      - name: Run Django tests
+        run: |
+          docker run --rm \
+            --env DATABASE_URL=${{ env.DATABASE_URL }} \
+            --env DJANGO_SETTINGS_MODULE=${{ env.DJANGO_SETTINGS_MODULE }} \
+            apecs-python \
+            poetry run python manage.py test

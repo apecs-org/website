@@ -1,0 +1,1 @@
+from apecs.core.tests.test_smoke import SmokeTest
