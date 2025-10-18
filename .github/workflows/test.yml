@@ -47,7 +47,11 @@ jobs:
         run: |
           docker run --rm \
             --network host \
-            --env DATABASE_URL=${{ env.DATABASE_URL }} \
+            --env POSTGRES_USER=${{ env.POSTGRES_USER }} \
+            --env POSTGRES_PASSWORD=${{ env.POSTGRES_PASSWORD }} \
+            --env POSTGRES_DB=${{ env.POSTGRES_DB }} \
+            --env POSTGRES_HOST=${{ env.POSTGRES_HOST }} \
+            --env POSTGRES_PORT=${{ env.POSTGRES_PORT }} \
             --env DJANGO_SETTINGS_MODULE=${{ env.DJANGO_SETTINGS_MODULE }} \
             apecs-python \
             poetry run python manage.py migrate --noinput
@@ -56,7 +60,12 @@ jobs:
         run: |
           docker run --rm \
             --network host \
-            --env DATABASE_URL=${{ env.DATABASE_URL }} \
+            --env POSTGRES_USER=${{ env.POSTGRES_USER }} \
+            --env POSTGRES_PASSWORD=${{ env.POSTGRES_PASSWORD }} \
+            --env POSTGRES_DB=${{ env.POSTGRES_DB }} \
+            --env POSTGRES_HOST=${{ env.POSTGRES_HOST }} \
+            --env POSTGRES_PORT=${{ env.POSTGRES_PORT }} \
             --env DJANGO_SETTINGS_MODULE=${{ env.DJANGO_SETTINGS_MODULE }} \
             apecs-python \
             poetry run python manage.py test
+
