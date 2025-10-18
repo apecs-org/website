@@ -1,32 +1,21 @@
-### Stack and external services
+# Integrations and External Services
 
-#### Analytics
+## Analytics
 
-Posthog
+- **PostHog**: User analytics
 
-#### Error monitoring
+## Error monitoring
 
-Sentry
+- **Sentry**: Error tracking and performance monitoring
 
-#### Database
+## Media storage
 
-PostgreSQL
+- **Hetzner Object Storage**: S3-compatible block storage for media files
 
-#### static files
+## Asynchronous tasks
 
-dev:
-tailwindcss
+- **Redis** and **Celery**: Background task processing and scheduling
 
-prod:
-Whitenoise
-
-#### Media storage
-
-S3 compatible block storage at Hetzner
-
-#### Asynchronous tasks
-
-Redis + Celery
 
 # Setup for development and testing
 
@@ -165,30 +154,8 @@ celery -A apecs inspect active
 
 #Monitor tasks in real-time
 celery -A apecs events
-``` 
+```
 
-## Integrations and External Services
-
-### Analytics
-
-- **PostHog**: User analytics and feature flags
-
-### Error Monitoring
-
-- **Sentry**: Error tracking and performance monitoring
-
-### Media Storage
-
-- **Hetzner Object Storage**: S3-compatible object storage for media files
-
-### Static Files
-
-- **Development**: Tailwind CSS with watch mode
-- **Production**: Whitenoise for serving static files
-
-### Asynchronous Tasks
-
-- **Redis + Celery**: Background task processing and scheduling
 
 ## Production Deployment
 
