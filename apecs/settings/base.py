@@ -53,11 +53,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django_htmx',
-    #    'django_hosts',
 ]
 
 MIDDLEWARE = [
-    #    'django_hosts.middleware.HostsRequestMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -68,12 +66,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
     'django_htmx.middleware.HtmxMiddleware',
-    #    'django_hosts.middleware.HostsResponseMiddleware',
 ]
 
 ROOT_URLCONF = 'apecs.urls'
-# ROOT_HOSTCONF = 'apecs.hosts'
-# DEFAULT_HOST = 'compass'
 
 TEMPLATES = [
     {

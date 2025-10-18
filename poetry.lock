@@ -576,18 +576,6 @@ files = [
 Django = ">=4.2"
 
 [[package]]
-name = "django-hosts"
-version = "7.0.0"
-description = "Dynamic and static host resolving for Django. Maps hostnames to URLconfs."
-optional = false
-python-versions = ">=3.9"
-groups = ["main"]
-files = [
-    {file = "django_hosts-7.0.0-py3-none-any.whl", hash = "sha256:93d3c941336463fd0c9377c1773d1c53a49606fa72656ed7ddfa474d2fe1f907"},
-    {file = "django_hosts-7.0.0.tar.gz", hash = "sha256:08006bc09f5af69638721ced0657f24044835a22a608732ee1004adc9c95fb7c"},
-]
-
-[[package]]
 name = "django-htmx"
 version = "1.26.0"
 description = "Extensions for using Django with htmx."
@@ -1878,4 +1866,4 @@ testing = ["coverage[toml]", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.13"
-content-hash = "a34d034b330fb996dd9a6276c5fa7b64602a4e3dd35b70015116d3c5ce7de37e"
+content-hash = "0bd787aca5bb6c42211816931b80e60e35433110f1146093b0b90f173df197fe"
