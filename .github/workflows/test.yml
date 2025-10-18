@@ -27,8 +27,13 @@ jobs:
           --health-retries 5
 
     env:
-      DATABASE_URL: postgres://postgres:postgres@localhost:5432/test_db
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/test_db
       DJANGO_SETTINGS_MODULE: apecs.settings.test
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: test_db
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
 
     steps:
       - name: Checkout code
@@ -41,14 +46,16 @@ jobs:
       - name: Run Django migrations
         run: |
           docker run --rm \
+            --network host \
             --env DATABASE_URL=${{ env.DATABASE_URL }} \
             --env DJANGO_SETTINGS_MODULE=${{ env.DJANGO_SETTINGS_MODULE }} \
             apecs-python \
-            poetry run python manage.py migrate
+            poetry run python manage.py migrate --noinput
 
       - name: Run Django tests
         run: |
           docker run --rm \
+            --network host \
             --env DATABASE_URL=${{ env.DATABASE_URL }} \
             --env DJANGO_SETTINGS_MODULE=${{ env.DJANGO_SETTINGS_MODULE }} \
             apecs-python \

@@ -18,11 +18,11 @@ CSRF_TRUSTED_ORIGINS = [f"{PREFERRED_SCHEME}://{host}" for host in ALLOWED_HOSTS
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "USER": 'postgres',
-        "NAME": 'test_db',
-        "PASSWORD": 'postgres',
-        "PORT": 5432,
-        "HOST": 'localhost',
+        "USER": os.getenv("POSTGRES_USER"),
+        "NAME": os.getenv("POSTGRES_DB"),
+        "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
+        "PORT": int(os.getenv("POSTGRES_PORT", 5432)),
+        "HOST": os.getenv("POSTGRES_HOST"),
     },
 }
 
