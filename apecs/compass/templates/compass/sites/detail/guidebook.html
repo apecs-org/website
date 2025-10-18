@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ guidebook.title }}</title>
+</head>
+<body>
+<h1>{{ guidebook.title }}</h1>
+<h2>Chapters</h2>
+{% for chapter in chapters %}
+    {{ chapter.position }}: <a href="{% url 'apecscompass:chapter-detail' chapter.id %}"> {{ chapter.article.title }} </a>
+    (by
+    {% for author in chapter.article.authors.all %}{{ author.username }}{% if not forloop.last %},
+    {% endif %}{% endfor %})<br>
+{% endfor %}
+</body>
+</html>

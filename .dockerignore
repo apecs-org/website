@@ -1,0 +1,27 @@
+.DS_Store
+
+.git
+.gitignore
+
+Dockerfile
+.dockerignore
+
+.venv
+__pycache__/
+
+# Node
+/node_modules
+
+# Database
+*.sqlite3
+*.db
+
+# IDE
+.idea
+.vscode
+
+# Other development files
+README.md
+fixture.json
+docker-compose.yml
+

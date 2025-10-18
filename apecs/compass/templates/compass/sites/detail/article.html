@@ -1,0 +1,149 @@
+{% extends "compass/base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+{% block content %}
+
+
+    <!-- Navbar -->
+    <header class="p-4 border-b">
+        <nav class="container mx-auto flex items-center justify-between">
+            <div class="">
+                <a href="#">All resources</a> &gt;
+                <a href="#">{{ chapter.guidebook.title }}</a> &gt;
+                <span class="font-semibold">{{ chapter.article.title }}</span>
+            </div>
+            <div>
+                <a href="#" class="mr-4">About</a>
+                <a href="#" class="mr-4">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="flex flex-col md:flex-row mt-8 container mx-auto px-4">
+        <aside class="md:w-1/4 lg:w-1/5 space-y-4">
+            <div class="p-4">
+                <h2 class="font-semibold">
+                    {{ chapter.guidebook.title }}
+                </h2>
+                <ul>
+                    {% for article in chapter.guidebook.articles.all %}
+                        <li class="font-light">
+                            <a href="#">{{ article.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </aside>
+
+        <main class="flex-1 md:mx-8 lg:mx-12">
+            <div class="p-6">
+                <h1 class="text-4xl font-semibold mb-6">{{ chapter.article.title }}</h1>
+
+                <div>
+                    {% for block in chapter.article.body %}
+                        {% if block.block_type == 'heading' %}
+                            <h3 class="text-lg font-bold mt-2">
+                                {{ block.value }}
+                            </h3>
+                        {% elif block.block_type == 'image' %}
+                            <div class="my-5">
+                                <div class="relative">
+                                    {% image block.value.image original as img %}
+                                    <img src="{{ img.url }}" alt="{{ block.value.caption|default:"Image" }}" class="rounded">
+                                    <div class="absolute bottom-2 right-0 bg-black bg-opacity-40 text-white text-xs px-3 py-1">
+                                        (c) Photographer
+                                    </div>
+                                </div>
+                                <div class="text-xs font-light text-gray-800">
+                                    {{ block.value.caption }}
+                                </div>
+                            </div>
+                        {% else %}
+                            {% include_block block %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+                <div class="mt-5 flex justify-between w-full">
+                    {% if previous_article %}
+                        <a class="inline-block px-4 py-3 rounded-lg border text-gray-800 bg-gray-200"
+                           href="{% url 'apecscompass:chapter-detail' previous_article.chapter_set.first.id %}">
+                            <p class="text-xs text-gray-800 italic">previous article:</p>
+                            <p>{{ previous_article.title }}</p>
+                        </a>
+                    {% endif %}
+                    <div class="flex-grow"></div>
+                    {% if next_article %}
+                        <a class="inline-block px-4 py-3 rounded-lg text-white bg-gray-600"
+                           href="{% url 'apecscompass:chapter-detail' next_article.chapter_set.first.id %}">
+                            <p class="text-xs text-gray-200 italic">next article:</p>
+                            <p>{{ next_article.title }}</p>
+                        </a>
+                    {% endif %}
+                </div>
+
+            </div>
+        </main>
+
+        <aside class="md:w-1/4 lg:w-1/5 mt-8 md:mt-0">
+            <div>
+                <div class="pb-2 text-lg font-bold">
+                    Corresponding editor
+                </div>
+                <ul role="list" class="grid gap-y-4 grid-cols-1">
+                    {% for e in chapter.article.editors.all %}
+                        <li>
+                            <div class="flex items-center gap-x-4">
+                                {% image e.profile_picture width-200 as e_img %}
+                                <img class="w-1/4 rounded-full"
+                                     src="{{ e_img.url }}"
+                                     alt="">
+                                <div>
+                                    <h3 class="font-semibold text-gray-800">{{ e.first_name }} {{ e.last_name }}</h3>
+                                    <p class="text-xs font-light">{{ e.affiliation }}</p>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div class="mt-4 py-2 text-lg font-bold">
+                    Contributing authors
+                </div>
+                <ul role="list" class="grid gap-y-4 grid-cols-1">
+                    {% for a in article.authors.all %}
+                        <li>
+                            <div class="flex items-center gap-x-4">
+                                {% image a.profile_picture width-200 as a_img %}
+                                <img class="w-1/4 rounded-full"
+                                     src="{{ a_img.url }}"
+                                     alt="">
+                                <div>
+                                    <h3 class="font-semibold text-gray-800">{{ a.first_name }} {{ a.last_name }}</h3>
+                                    <p class="text-xs font-light">{{ a.affiliation }}</p>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="mt-12">
+                <h3 class="pb-2 text-lg font-bold">
+                    References
+                </h3>
+                <ul class="space-y-2">
+                    {% for ref in article.references %}
+                        <li class="flex items-center gap-3 text-xs">
+                                <a href="{{ ref.value.url }}" target="_blank" rel="noopener noreferrer"
+                                   class="hover:underline">
+                                    {{ ref.value.text }}
+                                </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </aside>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends "compass/base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block extra_head %}
+    <style>
+        .selected {
+            color: #bd4c00;
+        }
+
+        .selected-container {
+            border-color: #bd4c00;
+        }
+    </style>
+
+{% endblock %}
+
+{% block content %}
+
+    <section class="bg-white dark:bg-gray-900">
+        <div class="py-8 px-4 mx-auto max-w-screen-md lg:px-6">
+            <div class="text-gray-500 text-xl font-bolder pl-1 pt-6 pb-2">
+                How are you conducting your research?
+            </div>
+            <div class="grid gap-8 lg:grid-cols-2">
+                <div id="field-container"
+                     class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+                     hx-on:click="document.getElementById('field').classList.toggle('selected');
+                                  document.getElementById('field-container').classList.toggle('selected-container');
+                                  document.getElementById('remote').classList.remove('selected');
+                                  document.getElementById('remote-container').classList.remove('selected-container');
+                                  document.getElementById('mode').classList.toggle('invisible');
+                                  document.getElementById('region').classList.add('invisible')">
+                    <div class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                         id="field">
+                        Fieldwork
+                    </div>
+                </div>
+                <div id="remote-container"
+                     class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+                     hx-on:click="document.getElementById('remote').classList.toggle('selected');
+                                  document.getElementById('remote-container').classList.toggle('selected-container');
+                                  document.getElementById('field').classList.remove('selected');
+                                  document.getElementById('field-container').classList.remove('selected-container');
+                                  document.getElementById('Arctic').classList.remove('selected');
+                                  document.getElementById('Arctic-container').classList.remove('selected-container');
+                                  document.getElementById('Antarctic').classList.remove('selected');
+                                  document.getElementById('Antarctic-container').classList.remove('selected-container');
+                                  document.getElementById('land').classList.remove('selected');
+                                  document.getElementById('land-container').classList.remove('selected-container');
+                                  document.getElementById('ship').classList.remove('selected');
+                                  document.getElementById('ship-container').classList.remove('selected-container');
+                                  document.getElementById('mode').classList.add('invisible');
+                                  document.getElementById('region').classList.add('invisible')">
+                    <div id="remote"
+                         class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        Remote data access
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="mode" class="bg-white dark:bg-gray-900 invisible">
+        <div class="py-8 px-4 mx-auto max-w-screen-md lg:px-6">
+            <div class="text-gray-500 text-xl font-bolder pl-1 pt-6 pb-2">
+                Are you based at a research station or on a vessel?
+            </div>
+            <div class="grid gap-8 lg:grid-cols-2">
+                <div id="Antarctic-container"
+                     class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+                     hx-on:click="document.getElementById('Antarctic').classList.toggle('selected');
+                                  document.getElementById('Antarctic-container').classList.toggle('selected-container');
+                                  document.getElementById('Arctic').classList.remove('selected');
+                                  document.getElementById('Arctic-container').classList.remove('selected-container');
+                                  document.getElementById('region').classList.remove('invisible')">
+                    <div class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                         id="Antarctic">
+                        Station
+                    </div>
+                </div>
+                <div id="Arctic-container"
+                     class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+                     hx-on:click="document.getElementById('Arctic').classList.toggle('selected');
+                                  document.getElementById('Arctic-container').classList.toggle('selected-container');
+                                  document.getElementById('Antarctic').classList.remove('selected');
+                                  document.getElementById('Antarctic-container').classList.remove('selected-container');
+                                  document.getElementById('region').classList.remove('invisible');">
+                    <div id="Arctic"
+                         class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        Research vessel
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+ <section id="region" class="bg-white dark:bg-gray-900 invisible">
+        <div class="py-8 px-4 mx-auto max-w-screen-md lg:px-6">
+            <div class="text-gray-500 text-xl font-bolder pl-1 pt-6 pb-2">
+                Where is your research taking place?
+            </div>
+            <div class="grid gap-8 lg:grid-cols-2">
+                <div id="land-container"
+                     class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+                     hx-on:click="document.getElementById('land').classList.toggle('selected');
+                                  document.getElementById('land-container').classList.toggle('selected-container');
+                                  document.getElementById('ship').classList.remove('selected')
+                                  document.getElementById('ship-container').classList.remove('selected-container')">
+                    <div class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                         id="land">
+                        Antarctic
+                    </div>
+                </div>
+                <div id="ship-container"
+                     class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+                     hx-on:click="document.getElementById('ship').classList.toggle('selected');
+                                  document.getElementById('ship-container').classList.toggle('selected-container');
+                                  document.getElementById('land').classList.remove('selected')
+                                  document.getElementById('land-container').classList.remove('selected-container')">
+                    <div id="ship"
+                         class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        Arctic
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}

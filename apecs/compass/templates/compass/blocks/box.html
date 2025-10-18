@@ -1,0 +1,8 @@
+<div class="p-4 my-4 rounded-lg shadow
+    {% if value.box_type == 'warning' %}
+        border-yellow-400 bg-gray-100 text-yellow-800 border-l-4
+    {% else %}
+        border-blue-400 text-blue-800 border-l-4
+    {% endif %}">
+        {{ value.content }}
+</div>
