@@ -5,6 +5,7 @@ from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.documents import urls as wagtaildocs_urls
 
 from django.urls import path
+from wagtail import urls as wagtail_urls
 
 urlpatterns = [
     # django
@@ -16,10 +17,14 @@ urlpatterns = [
 
     # apecs
     path('auth/', include('apecs.auth.urls')),
-    path('', include('apecs.core.urls')),
+
     path('compass/', include('apecs.compass.urls')),
 
     # api
     path('api/v1/', include('apecs.api.urls', namespace="v1")),
 
+]
+
+urlpatterns += [
+    path('', include(wagtail_urls)),  # This will serve the default Wagtail site
 ]
