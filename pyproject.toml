@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "apecs"
-version = "0.1.0"
+version = "0.0.1"
 description = ""
 authors = ["Axel Schlindwein <axel.schlindwein@uit.no>"]
 readme = "README.md"
@@ -26,7 +26,6 @@ django-celery-results = "^2.6.0"
 redis = "^6.4.0"
 pillow = "^11.3.0"
 load-dotenv = "^0.1.0"
-
 
 [build-system]
 requires = ["poetry-core"]
