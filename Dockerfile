@@ -13,7 +13,7 @@ COPY . .
 RUN npm run build
 
 # Keep only static build artifacts to reduce image size
-RUN rm -rf node_modules package*.json apecs/*/static/*
+RUN rm -rf node_modules package*.json
 
 # ------------------ STAGE 2: Python / Django ------------------
 FROM python:3.13-slim AS python
@@ -36,7 +36,7 @@ ENV PATH="$POETRY_HOME/bin:$PATH"
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
 # ------------------ Copy Node build artifacts first ------------------
-COPY --from=static --chown=apecsuser /usr/src/apecs/apecs/*/static ./apecs/
+COPY --from=static --chown=apecsuser /usr/src/apecs/apecs/static ./apecs/static/
 
 # Copy project metadata and install Python dependencies
 COPY pyproject.toml poetry.lock ./

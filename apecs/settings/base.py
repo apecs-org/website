@@ -170,7 +170,7 @@ PRIVATE_MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_PRIVATE_MEDIA_LOCATION
 MEDIA_ROOT = BASE_DIR / 'mediafiles'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/whitenoise')
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static/dist"]
 
 # Default primary key field type
