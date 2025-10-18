@@ -8,16 +8,16 @@ from django.urls import path
 from wagtail import urls as wagtail_urls
 
 urlpatterns = [
-    # django
-    path('admin/db/', admin.site.urls),
-
     # wagtail
     path('admin/cms/', include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
 
+    # django
+    path('admin/db/', admin.site.urls),
+
     # apecs
     path('auth/', include('apecs.auth.urls')),
-
+    path('', include('apecs.cms.urls')),
     path('compass/', include('apecs.compass.urls')),
 
     # api
@@ -26,5 +26,5 @@ urlpatterns = [
 ]
 
 urlpatterns += [
-    path('', include(wagtail_urls)),  # This will serve the default Wagtail site
+    path('', include(wagtail_urls)),
 ]

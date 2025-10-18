@@ -1,0 +1,1 @@
+from apecs.cms.views.detail.home import HomeDetailView
