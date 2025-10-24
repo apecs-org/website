@@ -6,8 +6,8 @@ authors = ["Axel Schlindwein <axel.schlindwein@uit.no>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "3.13.7" # EOL 2029-10, bugfix 2026-10
-django = "5.2.7" # EOL 2028-03
+python = "~=3.13.7" # EOL 2029-10, bugfix 2026-10
+django = "~=5.2.7" # EOL 2028-03
 wagtail = "7.0" # EOL 2026-10
 redis = "^7.0.0"
 celery = "^5.5.3"
