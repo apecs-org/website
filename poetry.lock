@@ -544,14 +544,14 @@ files = [
 
 [[package]]
 name = "django"
-version = "5.2.7"
+version = "5.2.8"
 description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "django-5.2.7-py3-none-any.whl", hash = "sha256:59a13a6515f787dec9d97a0438cd2efac78c8aca1c80025244b0fe507fe0754b"},
-    {file = "django-5.2.7.tar.gz", hash = "sha256:e0f6f12e2551b1716a95a63a1366ca91bbcd7be059862c1b18f989b1da356cdd"},
+    {file = "django-5.2.8-py3-none-any.whl", hash = "sha256:37e687f7bd73ddf043e2b6b97cfe02fcbb11f2dbb3adccc6a2b18c6daa054d7f"},
+    {file = "django-5.2.8.tar.gz", hash = "sha256:23254866a5bb9a2cfa6004e8b809ec6246eba4b58a7589bc2772f1bcc8456c7f"},
 ]
 
 [package.dependencies]
@@ -1311,6 +1311,18 @@ tests = ["defusedxml", "numpy", "packaging", "pympler", "pytest"]
 tests-min = ["defusedxml", "packaging", "pytest"]
 
 [[package]]
+name = "poetry-core"
+version = "2.2.1"
+description = "Poetry PEP 517 Build Backend"
+optional = false
+python-versions = "<4.0,>=3.9"
+groups = ["main"]
+files = [
+    {file = "poetry_core-2.2.1-py3-none-any.whl", hash = "sha256:bdfce710edc10bfcf9ab35041605c480829be4ab23f5bc01202cfe5db8f125ab"},
+    {file = "poetry_core-2.2.1.tar.gz", hash = "sha256:97e50d8593c8729d3f49364b428583e044087ee3def1e010c6496db76bd65ac5"},
+]
+
+[[package]]
 name = "posthog"
 version = "6.7.9"
 description = "Integrate PostHog into any python application."
@@ -1895,4 +1907,4 @@ testing = ["coverage[toml]", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.1"
 python-versions = "~=3.13.7"
-content-hash = "6b8612351df84cb657c97a0adbcbaff34ef370cbfd9efb1c3a5f8b1f2732a7dd"
+content-hash = "e209544345371f4c77590839cc28b1477e63ebf170e3a1846bdc8639abba6c10"

@@ -1,13 +1,16 @@
-[tool.poetry]
+[project]
 name = "apecs"
 version = "0.0.1"
 description = ""
-authors = ["Axel Schlindwein <axel.schlindwein@uit.no>"]
+authors = [
+    {name = "Axel Schlindwein", email = "axel.schlindwein@uit.no>"}
+]
 readme = "README.md"
+dynamic = [ "dependencies" ]
+requires-python = "~=3.13.7" # EOL 2029-10, bugfix 2026-10
 
 [tool.poetry.dependencies]
-python = "~=3.13.7" # EOL 2029-10, bugfix 2026-10
-django = "~=5.2.7" # EOL 2028-03
+django = "~=5.2.8" # EOL 2028-03
 wagtail = "7.0" # EOL 2026-10
 redis = "^7.0.0"
 celery = "^5.5.3"
@@ -26,6 +29,7 @@ posthog = "^6.7.6"
 sentry-sdk = "^2.41.0"
 setuptools="^80.9.0"
 load-dotenv = "^0.1.0"
+poetry-core = "^2.2.1"
 
 [build-system]
 requires = ["poetry-core"]
