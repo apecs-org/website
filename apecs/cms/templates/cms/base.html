@@ -1,37 +1,51 @@
 {% load static wagtailcore_tags wagtailimages_tags %}
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="h-full">
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="{% block description %}{% endblock description%}"/>
+    <meta name="description" content="{% block description %}{% endblock description %}"/>
 
-    <title>{% block title %}{% endblock title%}</title>
+    <title>{% block title %}{% endblock title %}</title>
 
     {% block extra_head %}
-    {% endblock extra_head%}
+    {% endblock extra_head %}
 
 </head>
 
-<body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+<body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}' class="h-full">
 
-    {% block modals %}
-    {% endblock modals%}
+{% block modals %}
+{% endblock modals %}
 
-    {% include "cms/components/header.html" %}
+<main class="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8 dark:bg-gray-900">
+    <div class="text-center">
+        <p class="text-base font-semibold text-orange">Association of Polar Early Career Scientists</p>
+        <h1 class="mt-4 text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl dark:text-white">
+            Work in progress.</h1>
+        <p class="mt-6 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8 dark:text-gray-400">The new APECS website
+            is under active development and will be launched soon.</p>
+        <div class="mt-10 flex items-center justify-center gap-x-6">
+            <a href="https://www.apecs.is/"
+               class="rounded-md hover:bg-orange bg-gray-800 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
+                Visit the current APECS website</a>
+        </div>
+        <div class="mt-10 flex items-center justify-center gap-x-6">
+            <a href="" class="text-sm font-semibold text-gray-900 dark:text-white">Contact the APECS International
+                Directorate <span aria-hidden="true">&rarr;</span></a>
+        </div>
+    </div>
+</main>
 
-    <div class="h-96">.</div><div class="h-96">.</div><div class="h-96">.</div>
 
-    {% block content %}
-    {% endblock content %}
+{% block content %}
+{% endblock content %}
 
-    {% include "cms/components/footer.html" %}
+{% block body_js %}
+{% endblock body_js %}
 
-    {% block body_js %}
-    {% endblock body_js %}
-
-    <script src="{% static 'htmx.min.js' %}"></script>
-    <script src="{% static 'tailwind.js' %}"></script>
+<script src="{% static 'htmx.min.js' %}"></script>
+<script src="{% static 'tailwind.js' %}"></script>
 </body>
 </html>
