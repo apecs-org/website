@@ -18,7 +18,7 @@ urlpatterns = [
     # apecs
     path('auth/', include('apecs.auth.urls')),
     path('', include('apecs.cms.urls')),
-    path('compass/', include('apecs.compass.urls')),
+    path('compass/', include('apecs.compass.urls', namespace="compass")),
 
     # api
     path('api/v1/', include('apecs.api.urls', namespace="v1")),

@@ -16,11 +16,19 @@
 
 {% block content %}
 
+    <div class="gap-x-6 px-6 py-3 text-center">
+        <p class="text-sm/6 text-gray-400 italic">
+            The POLARIN Training Hub is under <strong class="font-semibold">actively development</strong> and includes
+            experimental features and content.
+        </p>
+    </div>
+
+
     <div class="bg-white px-6 py-8 sm:py-10 lg:px-8 dark:bg-gray-900">
         <div class="mx-auto max-w-3xl text-center">
-            <h2 class="mt-2 text-4xl font-semibold tracking-tight text-polarin-blue sm:text-7xl dark:text-white">
+            <h2 class="mt-2 text-5xl font-semibold tracking-tight text-polarin-blue sm:text-7xl dark:text-white">
                 POLARIN Training Hub</h2>
-            <p class="mt-6 text-pretty text-xl font-medium text-gray-500 sm:text-xl/8 dark:text-gray-400">
+            <p class="mt-6 text-pretty text-2xl font-medium text-gray-600 sm:text-xl/8 dark:text-gray-400">
                 A collection of training resources for polar research.
             </p>
         </div>
@@ -37,11 +45,6 @@
                 working at polar research infrastructures often involves complex logistics, challenging environmental
                 conditions, strict regulatory frameworks, and the need to minimise environmental impacts in vulnerable
                 ecosystems.
-            </p>
-            <p class="mt-2 text-sm/6 text-gray-600 dark:text-gray-400">
-                This training material
-                provides a comprehensive guide to planning and conducting safe, sustainable and efficient research
-                activities at polar research infrastructures.
             </p>
             <div class="mt-4 grid grid-cols-1 gap-4 sm:mt-6 lg:grid-cols-6 lg:grid-rows-2">
                 <div class="flex p-px lg:col-span-4">
@@ -95,9 +98,167 @@
                     </div>
                 </div>
             </div>
+            <p class="mt-4 text-sm/6 text-gray-600 dark:text-gray-400">
+                This collection of training material provides an introduction to planning and conducting safe,
+                sustainable and
+                efficient research activities at polar research infrastructures. Remember to seek guidance and physical
+                training from your local research institute or infrastructure to ensure that your research is safe and
+                effective!
+            </p>
         </div>
     </div>
 
+
+
+    <div class="bg-white py-12 sm:py-16 dark:bg-gray-900">
+        <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+            <h2 class="text-base/7 font-semibold text-polarin-blue">Access the material</h2>
+            <p class="mt-2 mb-6 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
+                Find training resources and guidance
+            </p>
+            <p class="mt-2 text-sm/6 text-gray-600 dark:text-gray-400">
+                The material collections in the POLARIN Training Hub are <strong class="font-bold">organized by themes</strong>. You can access a list of
+                individual resources by selecting a theme.
+            </p>
+        </div>
+        <div class="mt-6 mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+            <div class="overflow-hidden sm:grid sm:grid-cols-2 dark:divide-white/10 dark:bg-gray-900 dark:shadow-none dark:outline dark:outline-1 dark:-outline-offset-1 dark:outline-white/20">
+                <div class="group m-2 rounded-lg relative border-gray-200 bg-white p-6 dark:border-white/10 dark:bg-gray-800/50 dark:focus-within:outline-indigo-500 border hover:bg-gray-100">
+                    <div class="mt-4">
+                        <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+                            <a href="{% url 'compass:polarin-training-science-communication' %}" class="focus:outline-none">
+                                <!-- Extend touch target to entire panel -->
+                                <span aria-hidden="true" class="absolute inset-0"></span>
+                                Fieldwork planning
+                            </a>
+                        </h3>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                            Resources on fieldwork planning and preparation for polar researchers conducting work on
+                            land or at sea
+                        </p>
+                    </div>
+                </div>
+                <div class="group m-2 rounded-lg relative border-gray-200 bg-white p-6 dark:border-white/10 dark:bg-gray-800/50 dark:focus-within:outline-indigo-500 border hover:bg-gray-100">
+                    <div class="mt-4">
+                        <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+                            <a href="{% url 'compass:polarin-training-science-communication' %}" class="focus:outline-none">
+                                <!-- Extend touch target to entire panel -->
+                                <span aria-hidden="true" class="absolute inset-0"></span>
+                                Safety
+                            </a>
+                        </h3>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                            Resources on implementing safe fieldwork practices in polar environments
+                        </p>
+                    </div>
+                </div>
+                <div class="group m-2 rounded-lg relative border-gray-200 bg-white p-6 dark:border-white/10 dark:bg-gray-800/50 dark:focus-within:outline-indigo-500 border hover:bg-gray-100">
+                    <div class="mt-4">
+                        <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+                            <a href="{% url 'compass:polarin-training-science-communication' %}" class="focus:outline-none">
+                                <!-- Extend touch target to entire panel -->
+                                <span aria-hidden="true" class="absolute inset-0"></span>
+                                Logistics, permits and regulations
+                            </a>
+                        </h3>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                            Resources on managing logistics, obtaining permits and following regulations for research in
+                            the polar regions
+                        </p>
+                    </div>
+                </div>
+                <div class="group m-2 rounded-lg relative border-gray-200 bg-white p-6 dark:border-white/10 dark:bg-gray-800/50 dark:focus-within:outline-indigo-500 border hover:bg-gray-100">
+                    <div class="mt-4">
+                        <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+                            <a href="{% url 'compass:polarin-training-science-communication' %}" class="focus:outline-none">
+                                <!-- Extend touch target to entire panel -->
+                                <span aria-hidden="true" class="absolute inset-0"></span>
+                                Ethical and equitable collaboration
+                            </a>
+                        </h3>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                            Resources on ethical and equitable collaboration with Indigenous Peoples and local
+                            communities in the Arctic
+                        </p>
+                    </div>
+                </div>
+                <div class="group m-2 rounded-lg relative border-gray-200 bg-white p-6 dark:border-white/10 dark:bg-gray-800/50 dark:focus-within:outline-indigo-500 border hover:bg-gray-100">
+                    <div class="mt-4">
+                        <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+                            <a href="{% url 'compass:polarin-training-science-communication' %}" class="focus:outline-none">
+                                <!-- Extend touch target to entire panel -->
+                                <span aria-hidden="true" class="absolute inset-0"></span>
+                                Reducing environmental impact
+                            </a>
+                        </h3>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                            Resources on reducing environmental impact and advancing sustainable practices in polar
+                            research activities
+                        </p>
+                    </div>
+                </div>
+                <div class="group m-2 rounded-lg relative border-gray-200 bg-white p-6 dark:border-white/10 dark:bg-gray-800/50 dark:focus-within:outline-indigo-500 border hover:bg-gray-100">
+                    <div class="mt-4">
+                        <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+                            <a href="{% url 'compass:polarin-training-science-communication' %}" class="focus:outline-none">
+                                <!-- Extend touch target to entire panel -->
+                                <span aria-hidden="true" class="absolute inset-0"></span>
+                                Scientific instrumentation and data acquisition
+                            </a>
+                        </h3>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                            Resources on scientific instrumentation, observation protocols and data acquisition during
+                            polar fieldwork
+                        </p>
+                    </div>
+                </div>
+                <div class="group m-2 rounded-lg relative border-gray-200 bg-white p-6 dark:border-white/10 dark:bg-gray-800/50 dark:focus-within:outline-indigo-500 border hover:bg-gray-100">
+                    <div class="mt-4">
+                        <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+                            <a href="https://github.com/polarin-he/data_training_material" class="focus:outline-none" target="_blank">
+                                <!-- Extend touch target to entire panel -->
+                                <span aria-hidden="true" class="absolute inset-0"></span>
+                                Data management and analysis
+                            </a>
+                        </h3>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                            Resources on managing and analyzing data collected during polar research activities
+                        </p>
+                    </div>
+                </div>
+                <div class="group m-2 rounded-lg relative border-gray-200 bg-white p-6 dark:border-white/10 dark:bg-gray-800/50 dark:focus-within:outline-indigo-500 border hover:bg-gray-100">
+                    <div class="mt-4">
+                        <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+                            <a href="{% url 'compass:polarin-training-science-communication' %}" class="focus:outline-none">
+                                <!-- Extend touch target to entire panel -->
+                                <span aria-hidden="true" class="absolute inset-0"></span>
+                                Science communication
+                            </a>
+                        </h3>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 ">
+                            Resources on communicating scientific results to different audiences
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bg-white dark:bg-gray-900">
+        <div class="mx-auto max-w-7xl px-6 py-12 sm:py-16 lg:px-8">
+            <h2 class="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
+                Do you want to contribute? <br>
+                <span class="text-polarin-blue">You can share resources with us.</span></h2>
+            <div class="mt-10 flex items-center gap-x-6">
+                <a href="https://eu-polarin.eu"
+                   class="rounded-md bg-polarin-blue px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm">
+                    Learn more about POLARIN</a>
+                <a href="mailto:info@apecs.is" class="text-sm/6 font-semibold text-gray-900 dark:text-gray-300 dark:hover:text-white">
+                    Contact the team<span aria-hidden="true">→</span></a>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -105,7 +266,7 @@
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                 <div class="lg:pr-4">
-                    <div class="relative overflow-hidden rounded-3xl px-6 pb-9 pt-64 sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10 dark:shadow-none dark:after:pointer-events-none dark:after:absolute dark:after:inset-0 dark:after:rounded-3xl dark:after:ring-1 dark:after:ring-inset dark:after:ring-white/10">
+                    <div class="relative overflow-hidden px-6 pb-9 pt-64 sm:px-12 lg:max-w-sm lg:px-8 lg:pb-8 xl:px-10 xl:pb-10 dark:shadow-none dark:after:pointer-events-none dark:after:absolute dark:after:inset-0 dark:after:rounded-3xl dark:after:ring-1 dark:after:ring-inset dark:after:ring-white/10">
                         <img src="https://eu-polarin.eu/wp-content/uploads/2024/04/polarin-web1.svg"
                              alt=""
                              class="absolute inset-0 size-full rounded-3xl object-cover"/>
@@ -144,7 +305,7 @@
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                 <div class="lg:pr-4">
-                    <div class="relative overflow-hidden px-6 pb-9 pt-64 sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10 dark:shadow-none dark:after:pointer-events-none dark:after:absolute dark:after:inset-0 dark:after:rounded-3xl dark:after:ring-1 dark:after:ring-inset dark:after:ring-white/10">
+                    <div class="relative overflow-hidden px-6 pb-9 pt-64 sm:px-12 lg:max-w-sm lg:px-8 lg:pb-8 xl:px-10 xl:pb-10 dark:shadow-none dark:after:pointer-events-none dark:after:absolute dark:after:inset-0 dark:after:rounded-3xl dark:after:ring-1 dark:after:ring-inset dark:after:ring-white/10">
                         <img src="https://apecs-s3b1.fsn1.your-objectstorage.com/files/images/APECS_Logo.max-800x600.png"
                              alt=""
                              class="absolute inset-0 size-full object-cover"/>
