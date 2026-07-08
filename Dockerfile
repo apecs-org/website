@@ -33,7 +33,8 @@ WORKDIR /home/apecsuser/apecs
 # Install Poetry
 ENV POETRY_HOME=/home/apecsuser/.poetry
 ENV PATH="$POETRY_HOME/bin:$PATH"
-RUN curl -sSL https://install.python-poetry.org | python3 -
+RUN pip install --user poetry
+ENV PATH="/home/apecsuser/.local/bin:$PATH"
 
 # ------------------ Copy Node build artifacts first ------------------
 COPY --from=static --chown=apecsuser /usr/src/apecs/apecs/static ./apecs/static/
