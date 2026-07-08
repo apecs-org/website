@@ -6,6 +6,7 @@ module.exports = {
             colors: {
                 'blue': '#074F8D',
                 'orange': '#F26A24',
+                'polarin-blue': '#0078FD',
             },
         },
     },

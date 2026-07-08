@@ -8,3 +8,12 @@ class GuideView(TemplateView):
         # Call the base implementation to get the default context
         context = super().get_context_data(**kwargs)
         return context
+
+
+class PolarinView(TemplateView):
+    template_name = "compass/sites/polarin/polarin.html"
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation to get the default context
+        context = super().get_context_data(**kwargs)
+        return context

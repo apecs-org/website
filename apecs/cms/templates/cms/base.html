@@ -19,12 +19,14 @@
     {% block modals %}
     {% endblock modals%}
 
+    {% include "cms/components/header.html" %}
+
+    <div class="h-96">.</div><div class="h-96">.</div><div class="h-96">.</div>
+
     {% block content %}
     {% endblock content %}
 
-    <footer class="w-full text-center p-4 mt-12 border-t border-gray-200">
-        <p class="italic font-light text-gray-600">footer</p>
-    </footer>
+    {% include "cms/components/footer.html" %}
 
     {% block body_js %}
     {% endblock body_js %}

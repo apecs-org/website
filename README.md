@@ -111,7 +111,7 @@ With ```npm run dev``` you can serve frontend assets with webpack:
 npx webpack serve --mode development
 ```
 
-## Using Docker Compose (Alternative)
+## Terminal 4; Background services (Docker)
 
 Start services for Redis, Celery and PostgreSQL in the background:
 

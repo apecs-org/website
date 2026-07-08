@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'wagtail.search',
     'wagtail.admin',
     'wagtail',
+
     'taggit',
     'modelcluster',
     'storages',
@@ -145,8 +146,8 @@ USE_TZ = True
 
 # S3 OBJECT STORAGE
 
-AWS_ACCESS_KEY_ID = get_env_read_file("APECS_S3_ACCESS_KEY") # SECRET
-AWS_SECRET_ACCESS_KEY = get_env_read_file("APECS_S3_SECRET_KEY") # SECRET
+AWS_ACCESS_KEY_ID = get_env_read_file("APECS_S3_ACCESS_KEY")  # SECRET
+AWS_SECRET_ACCESS_KEY = get_env_read_file("APECS_S3_SECRET_KEY")  # SECRET
 
 AWS_STORAGE_BUCKET_NAME = 'apecs-s3b1'
 AWS_S3_REGION_NAME = 'fsn1'

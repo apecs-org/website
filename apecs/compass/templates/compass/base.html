@@ -5,31 +5,60 @@
     <meta charset="utf-8"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="{% block description %}{% endblock description%}"/>
+    <meta name="description" content="{% block description %}{% endblock description %}"/>
 
-    <title>{% block title %}{% endblock title%}</title>
+    <title>{% block title %}{% endblock title %}</title>
 
     {% block extra_head %}
-    {% endblock extra_head%}
+    {% endblock extra_head %}
 
 </head>
 
 <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
 
-    {% block modals %}
-    {% endblock modals%}
+{% block modals %}
+{% endblock modals %}
 
-    {% block content %}
-    {% endblock content %}
+{% block content %}
+{% endblock content %}
 
-    <footer class="mx-auto text-center p-4 mt-12 border-t border-gray-200">
-        <p class="italic font-light text-gray-600">footer placeholder</p>
-    </footer>
+<footer class="bg-gray-50 dark:bg-gray-900">
+    <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+        <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+            <div class="space-y-8">
+                <img src="https://eu-polarin.eu/wp-content/uploads/2024/05/EN_FundedbytheEU_RGB_POS-2048x456.png"
+                     alt="Company name" class="h-12"/>
+                <p class="text-balance text-sm/6 text-gray-600 dark:text-gray-400">
+                    POLARIN has received funding from the European Union’s Horizon Europe research and innovation programme under Grant Agreement No. 101130949.
+                </p>
+            </div>
+            <div class="space-y-8">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/NFR-logo-eng-rgb.svg"
+                     alt="Company name" class="h-12"/>
+                <p class="text-balance text-sm/6 text-gray-600 dark:text-gray-400">
+                    APECS has received funding from the Research Council of Norway under project No. 341646.
+                </p>
+            </div>
+            <div class="space-y-8">
+                <img src="https://apecs-s3b1.fsn1.your-objectstorage.com/files/images/APECS_Logo.max-800x600.png"
+                     alt="Company name" class="h-12"/>
+                <p class="text-balance text-sm/6 text-gray-600 dark:text-gray-400">
+                    The APECS International Directorate is hosted and financially supported by UiT The Arctic University of Norway, the Norwegian Polar Institute and the Fram Centre.
+                </p>
+            </div>
+        </div>
+        <div class="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24 dark:border-white/10">
+            <p class="text-sm/8 text-gray-500">
+                APECS International Directorate, 2026. You can contact <span class="italic">info@apecs.is</span> with any requests about this page.</p>
+        </div>
+    </div>
+</footer>
 
-    {% block body_js %}
-    {% endblock body_js %}
 
-    <script src="{% static 'htmx.min.js' %}"></script>
-    <script src="{% static 'tailwind.js' %}"></script>
+{% block body_js %}
+{% endblock body_js %}
+
+<script src="{% static 'htmx.min.js' %}"></script>
+<script src="{% static 'tailwind.js' %}"></script>
 </body>
 </html>

@@ -6,10 +6,10 @@ from wagtail.images.blocks import ImageChooserBlock
 from django.db import models
 
 
-class HomePage(Page):
+class CMSPage(Page):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    template = "cms/sites/home.html"
+    template = "cms/sites/page.html"
 
     body = StreamField([
         ('heading', blocks.CharBlock(form_classname="Heading")),
