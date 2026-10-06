@@ -1,1 +1,1 @@
-from apecs.compass.views.customise import GuideView, PolarinView, PolarinScienceCommunicationView
+from apecs.compass.views.customise import GuideView, PolarinView, PolarinScienceCommunicationView, PolarinTrainingCollectionView

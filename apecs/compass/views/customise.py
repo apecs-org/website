@@ -26,3 +26,12 @@ class PolarinScienceCommunicationView(TemplateView):
         # Call the base implementation to get the default context
         context = super().get_context_data(**kwargs)
         return context
+
+
+class PolarinTrainingCollectionView(TemplateView):
+    template_name = "compass/sites/polarin/polarin-collection-template.html"
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation to get the default context
+        context = super().get_context_data(**kwargs)
+        return context

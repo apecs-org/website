@@ -3,7 +3,7 @@ from django.urls import path
 from apecs.compass.app import APECSCompassConfig
 from apecs.compass.views.details import ArticleDetailView, GuidebookDetailView, ChapterDetailView
 from apecs.compass.views import GuideView, PolarinView, \
-    PolarinScienceCommunicationView
+    PolarinScienceCommunicationView, PolarinTrainingCollectionView
 
 urlpatterns = [
     path("article/<int:pk>/", ArticleDetailView.as_view(), name="article-detail"),
@@ -12,6 +12,7 @@ urlpatterns = [
     path('guide/', GuideView.as_view(), name='guide'),
     path('polarin-training/', PolarinView.as_view(), name='polarin-training'),
     path('polarin-training/science-communication', PolarinScienceCommunicationView.as_view(), name='polarin-training-science-communication'),
+    path('polarin-training/collection-template', PolarinTrainingCollectionView.as_view(), name='polarin-training-collection-template'),
 ]
 
 app_name = APECSCompassConfig.label
