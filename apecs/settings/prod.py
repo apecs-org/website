@@ -36,12 +36,31 @@ DATABASES = {
 # Wagtail
 WAGTAILADMIN_BASE_URL = []
 
+
 # SENTRY CONFIGURATION
+def sentry_filter(event, hint):
+    logger = event.get("logger", "")
+    if logger == "django.security.csrf":
+        exc_info = hint.get("exc_info")
+
+        if exc_info:
+            _, exc_value, _ = exc_info
+
+            if "Referer checking failed" in str(exc_value):
+                return None
+
+    if logger == "django.security.DisallowedHost":
+        return None
+
+    return event
+
+
 sentry_sdk.init(
-    dsn= get_env_read_file("APECS_SENTRY_DSN"),
+    dsn=get_env_read_file("APECS_SENTRY_DSN"),
     send_default_pii=True,
     traces_sample_rate=1.0,
     release=APECS_VERSION,
+    before_send=sentry_filter,
 )
 
 # POSTHOG CONFIGURATION
