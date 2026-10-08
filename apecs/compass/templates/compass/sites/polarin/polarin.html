@@ -27,10 +27,26 @@
         </div>
     </div>
 
+    <!--
     <div class="gap-x-6 px-6 py-3 mb-4 mx-auto max-w-2xl lg:max-w-7xl">
         <p class="text-sm/6 text-gray-800">
-            <a href="https://eu-polarin.eu" class="text-polarin-blue font-semibold">POLARIN</a> is an international network of polar research infrastructures and services designed to address the scientific challenges of the polar regions. The POLARIN Training Hub was developed by the APECS International Directorate and is integrated into the APECS website. You can <a href="http://eu-polarin.eu" class="underline decoration-polarin-blue decoration-2">go back to the POLARIN website</a> to learn more about the project behind this collection of training resources.
+            <a href="https://eu-polarin.eu" class="text-polarin-blue font-semibold">POLARIN</a> is an international
+            network of polar research infrastructures and services designed to address the scientific challenges of the
+            polar regions. The POLARIN Training Hub was developed by the APECS International Directorate and is
+            integrated into the APECS website. You can <a href="http://eu-polarin.eu"
+                                                          class="underline decoration-polarin-blue decoration-2">go back
+            to the POLARIN website</a> to learn more about the project behind this collection of training resources.
         </p>
+    </div>
+    -->
+
+    {% include "compass/components/resource_stats.html" with resource_stats=resource_stats %}
+
+    <div class="flex justify-center gap-x-6 px-6 py-3 mb-12 mx-auto max-w-2xl lg:max-w-7xl">
+        <a href="#resource-collections"
+           class="rounded-md bg-polarin-blue px-3.5 py-2.5 font-semibold text-white shadow-sm">
+            Access the training resources <span aria-hidden="true">&darr;</span>
+        </a>
     </div>
 
     <div class="bg-gray-50 py-12 sm:py-16 dark:bg-gray-900">
@@ -78,7 +94,8 @@
                                 Reducing environmental impact
                             </p>
                             <p class="mt-2 max-w-lg text-sm/6 text-gray-600 dark:text-gray-400">
-                                Reduce your research's environmental impact by using sustainable and responsible practices.
+                                Reduce your research's environmental impact by using sustainable and responsible
+                                practices.
                             </p>
                         </div>
                     </div>
@@ -97,149 +114,65 @@
                     </div>
                 </div>
             </div>
-            <p class="mt-5 text-sm/6 text-gray-600 dark:text-gray-400">
-                The resources you can access below provide an introduction to planning and conducting safe, sustainable and efficient research activities at polar research infrastructures.
-
-                <span class="font-semibold">
-                    Remember to seek guidance and physical training from your local research institute or infrastructure to ensure that your research is safe and
-                    effective!
-                </span>
+            <p class="mt-8 text-sm/6 text-gray-600 dark:text-gray-400">
+                The resources in the POLARIN Training Hub provide an introduction to planning and conducting safe,
+                sustainable and efficient research activities at polar research infrastructures but do not
+                replace guidelines and training from your local research institute or infrastructure.
             </p>
+
+            <div class=" bg-yellow-50 p-4 mt-6 rounded-lg">
+                <div class="flex items-start">
+                    <svg viewBox="0 0 20 20" fill="currentColor"
+                         class="h-6 w-6 shrink-0 text-yellow-400 dark:text-yellow-500">
+                        <path d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495ZM10 5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 10 5Zm0 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
+                              clip-rule="evenodd" fill-rule="evenodd"/>
+                    </svg>
+                    <div class="ml-3">
+                        <p class="text-sm text-yellow-700 dark:text-yellow-300">
+                            Remember to seek guidance and direct training from your local research institute or
+                            infrastructure to ensure that your research is safe and
+                            effective!
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
 
 
-    <div class="bg-white py-12 sm:py-16 dark:bg-gray-900">
+    <div class="bg-white py-12 sm:py-16 dark:bg-gray-900" id="resource-collections">
         <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
             <h2 class="text-base/7 font-semibold text-polarin-blue">Access the material</h2>
             <p class="mt-2 mb-6 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
                 Find training resources and guidance
             </p>
             <p class="mt-2 text-sm/6 text-gray-600 dark:text-gray-400">
-                The material collections in the POLARIN Training Hub are <strong class="font-bold">organized by themes</strong>. You can access a list of
+                The material collections in the POLARIN Training Hub are <strong class="font-bold">organized by
+                themes</strong>. You can access a list of
                 individual resources by selecting a theme.
             </p>
         </div>
+
+
         <div class="mt-6 mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
             <div class="overflow-hidden sm:grid sm:grid-cols-2 dark:divide-white/10 dark:bg-gray-900 dark:shadow-none dark:outline dark:outline-1 dark:-outline-offset-1 dark:outline-white/20">
-                <div class="group m-2 rounded-lg relative border-gray-200 bg-white p-6 dark:border-white/10 dark:bg-gray-800/50 dark:focus-within:outline-indigo-500 border hover:bg-gray-100">
-                    <div class="mt-4">
-                        <h3 class="text-base font-semibold text-gray-900 hover:text-polarin-blue dark:text-white">
-                            <a href="{% url 'compass:polarin-training-collection-planning' %}" class="focus:outline-none">
-                                <!-- Extend touch target to entire panel -->
-                                <span aria-hidden="true" class="absolute inset-0"></span>
-                                Fieldwork planning
-                            </a>
-                        </h3>
-                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                            Resources on fieldwork planning and preparation for polar researchers conducting work on
-                            land or at sea
-                        </p>
+                {% for category in categories %}
+                    <div class="group m-2 rounded-lg relative border-gray-200 bg-white p-6 dark:border-white/10 dark:bg-gray-800/50 dark:focus-within:outline-indigo-500 border hover:bg-gray-100">
+                        <div class="mt-4">
+                            <h3 class="text-base font-semibold text-gray-900 hover:text-polarin-blue dark:text-white">
+                                <a href="{% url 'compass:polarin-training-collection' category_slug=category.slug %}"
+                                   class="focus:outline-none">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    {{ category.name }}
+                                </a>
+                            </h3>
+                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                                {{ category.description }}
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="group m-2 rounded-lg relative border-gray-200 bg-white p-6 dark:border-white/10 dark:bg-gray-800/50 dark:focus-within:outline-indigo-500 border hover:bg-gray-100">
-                    <div class="mt-4">
-                        <h3 class="text-base font-semibold text-gray-900 hover:text-polarin-blue dark:text-white">
-                            <a href="{% url 'compass:polarin-training-collection-safety' %}" class="focus:outline-none">
-                                <!-- Extend touch target to entire panel -->
-                                <span aria-hidden="true" class="absolute inset-0"></span>
-                                Safety
-                            </a>
-                        </h3>
-                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                            Resources on implementing safe fieldwork practices in polar environments
-                        </p>
-                    </div>
-                </div>
-                <div class="group m-2 rounded-lg relative border-gray-200 bg-white p-6 dark:border-white/10 dark:bg-gray-800/50 dark:focus-within:outline-indigo-500 border hover:bg-gray-100">
-                    <div class="mt-4">
-                        <h3 class="text-base font-semibold text-gray-900 hover:text-polarin-blue dark:text-white">
-                            <a href="{% url 'compass:polarin-training-collection-logistics' %}" class="focus:outline-none">
-                                <!-- Extend touch target to entire panel -->
-                                <span aria-hidden="true" class="absolute inset-0"></span>
-                                Logistics, permits and regulations
-                            </a>
-                        </h3>
-                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                            Resources on managing logistics, obtaining permits and following regulations for research in
-                            the polar regions
-                        </p>
-                    </div>
-                </div>
-                <div class="group m-2 rounded-lg relative border-gray-200 bg-white p-6 dark:border-white/10 dark:bg-gray-800/50 dark:focus-within:outline-indigo-500 border hover:bg-gray-100">
-                    <div class="mt-4">
-                        <h3 class="text-base font-semibold text-gray-900 hover:text-polarin-blue dark:text-white">
-                            <a href="{% url 'compass:polarin-training-collection-collaboration' %}" class="focus:outline-none">
-                                <!-- Extend touch target to entire panel -->
-                                <span aria-hidden="true" class="absolute inset-0"></span>
-                                Ethical and equitable collaboration
-                            </a>
-                        </h3>
-                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                            Resources on ethical and equitable collaboration with Indigenous Peoples and local
-                            communities in the Arctic
-                        </p>
-                    </div>
-                </div>
-                <div class="group m-2 rounded-lg relative border-gray-200 bg-white p-6 dark:border-white/10 dark:bg-gray-800/50 dark:focus-within:outline-indigo-500 border hover:bg-gray-100">
-                    <div class="mt-4">
-                        <h3 class="text-base font-semibold text-gray-900 hover:text-polarin-blue dark:text-white">
-                            <a href="{% url 'compass:polarin-training-collection-environment' %}" class="focus:outline-none">
-                                <!-- Extend touch target to entire panel -->
-                                <span aria-hidden="true" class="absolute inset-0"></span>
-                                Reducing environmental impact
-                            </a>
-                        </h3>
-                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                            Resources on reducing environmental impact and advancing sustainable practices in polar
-                            research activities
-                        </p>
-                    </div>
-                </div>
-                <div class="group m-2 rounded-lg relative border-gray-200 bg-white p-6 dark:border-white/10 dark:bg-gray-800/50 dark:focus-within:outline-indigo-500 border hover:bg-gray-100">
-                    <div class="mt-4">
-                        <h3 class="text-base font-semibold text-gray-900 hover:text-polarin-blue dark:text-white">
-                            <a href="{% url 'compass:polarin-training-collection-instruments' %}" class="focus:outline-none">
-                                <!-- Extend touch target to entire panel -->
-                                <span aria-hidden="true" class="absolute inset-0"></span>
-                                Scientific instrumentation and data acquisition
-                            </a>
-                        </h3>
-                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                            Resources on scientific instrumentation, observation protocols and data acquisition during
-                            polar fieldwork
-                        </p>
-                    </div>
-                </div>
-                <div class="group m-2 rounded-lg relative border-gray-200 bg-white p-6 dark:border-white/10 dark:bg-gray-800/50 dark:focus-within:outline-indigo-500 border hover:bg-gray-100">
-                    <div class="mt-4">
-                        <h3 class="text-base font-semibold text-gray-900 hover:text-polarin-blue dark:text-white">
-                            <a href="{% url 'compass:polarin-training-collection-data' %}" class="focus:outline-none" target="_blank">
-                                <!-- Extend touch target to entire panel -->
-                                <span aria-hidden="true" class="absolute inset-0"></span>
-                                Data management and analysis
-                            </a>
-                        </h3>
-                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                            Resources on managing and analyzing data collected during polar research activities
-                        </p>
-                    </div>
-                </div>
-                <div class="group m-2 rounded-lg relative border-gray-200 bg-white p-6 dark:border-white/10 dark:bg-gray-800/50 dark:focus-within:outline-indigo-500 border hover:bg-gray-100">
-                    <div class="mt-4">
-                        <h3 class="text-base font-semibold text-gray-900 hover:text-polarin-blue dark:text-white">
-                            <a href="{% url 'compass:polarin-training-collection-communication' %}" class="focus:outline-none">
-                                <!-- Extend touch target to entire panel -->
-                                <span aria-hidden="true" class="absolute inset-0"></span>
-                                Science communication
-                            </a>
-                        </h3>
-                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 ">
-                            Resources on communicating scientific results to different audiences
-                        </p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -254,7 +187,8 @@
                 <a href="https://eu-polarin.eu"
                    class="rounded-md bg-polarin-blue px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm">
                     Learn more about POLARIN</a>
-                <a href="mailto:info@apecs.is" class="text-sm/6 font-semibold text-gray-900 dark:text-gray-300 dark:hover:text-white">
+                <a href="mailto:info@apecs.is"
+                   class="text-sm/6 font-semibold text-gray-900 dark:text-gray-300 dark:hover:text-white">
                     Contact the team <span aria-hidden="true">→</span></a>
             </div>
         </div>
@@ -267,7 +201,7 @@
             <div class="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                 <div class="lg:pr-4">
                     <div class="relative overflow-hidden px-6 pb-9 pt-64 sm:px-12 lg:max-w-sm lg:px-8 lg:pb-8 xl:px-10 xl:pb-10 dark:shadow-none dark:after:pointer-events-none dark:after:absolute dark:after:inset-0 dark:after:rounded-3xl dark:after:ring-1 dark:after:ring-inset dark:after:ring-white/10">
-                        <img src="https://eu-polarin.eu/wp-content/uploads/2024/04/polarin-web1.svg"
+                        <img src="https://apecs-s3b1.fsn1.your-objectstorage.com/files/original_images/POLARIN_Logo.png"
                              alt=""
                              class="absolute inset-0 size-full rounded-3xl object-cover"/>
                     </div>

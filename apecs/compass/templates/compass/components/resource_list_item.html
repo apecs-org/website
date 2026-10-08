@@ -1,0 +1,62 @@
+{% load static wagtailcore_tags wagtailimages_tags settings %}
+
+<li class="flex items-center justify-between gap-x-6 py-5">
+    <div class="min-w-0">
+        <div class="flex items-start gap-x-3">
+            <p class="text-sm/6 font-semibold text-gray-900 dark:text-white">
+                {{ resource.title }}
+            </p>
+
+            {% if resource.resource_type.name == "publication" %}
+                <p class="mt-0.5 rounded-md bg-orange-50 px-1.5 py-0.5 text-xs font-medium text-orange-700 ring-1 ring-inset ring-orange-600/20">
+                    {{ resource.resource_type.display_name }}
+                </p>
+
+            {% elif resource.resource_type.name == "code" %}
+                <p class="mt-0.5 rounded-md bg-emerald-50 px-1.5 py-0.5 text-xs font-medium text-emerald-700 ring-1 ring-inset ring-emerald-600/20">
+                    {{ resource.resource_type.display_name }}
+                </p>
+
+            {% elif resource.resource_type.name == "guide" %}
+                <p class="mt-0.5 rounded-md bg-lime-50 px-1.5 py-0.5 text-xs font-medium text-lime-700 ring-1 ring-inset ring-lime-600/20 ">
+                    {{ resource.resource_type.display_name }}
+                </p>
+
+            {% elif resource.resource_type.name == "research" %}
+                <p class="mt-0.5 rounded-md bg-yellow-50 px-1.5 py-0.5 text-xs font-medium text-yellow-700 ring-1 ring-inset ring-yellow-600/20">
+                    {{ resource.resource_type.display_name }}
+                </p>
+
+            {% elif resource.resource_type.name == "web" %}
+                <p class="mt-0.5 rounded-md bg-cyan-50 px-1.5 py-0.5 text-xs font-medium text-cyan-700 ring-1 ring-inset ring-cyan-600/20">
+                    {{ resource.resource_type.display_name }}
+                </p>
+
+            {% elif resource.resource_type.name == "webinar" %}
+                <p class="mt-0.5 rounded-md bg-blue-50 px-1.5 py-0.5 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-600/20">
+                    {{ resource.resource_type.display_name }}
+                </p>
+            {% elif resource.resource_type.name == "handbook" %}
+                <p class="mt-0.5 rounded-md bg-rose-50 px-1.5 py-0.5 text-xs font-medium text-rose-700 ring-1 ring-inset ring-rose-600/20">
+                    {{ resource.resource_type.display_name }}
+                </p>
+            {% else %}
+                <p class="mt-0.5 rounded-md bg-gray-50 px-1.5 py-0.5 text-xs font-medium text-gray-700 ring-1 ring-inset ring-gray-600/20">
+                    {{ resource.resource_type.display_name }}
+                </p>
+            {% endif %}
+        </div>
+
+        <div class="mt-1 flex items-center gap-x-2 text-xs/5 text-gray-500 dark:text-gray-400">
+            <p class="truncate">by {{ resource.author }}</p>
+        </div>
+    </div>
+
+    <div class="flex flex-none items-center gap-x-4">
+        <a href="{{ resource.url }}"
+           target="_blank"
+           class="hidden rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:block dark:bg-white/10 dark:text-white dark:shadow-none dark:ring-white/5 dark:hover:bg-white/20">
+            Access resource <span aria-hidden="true">&rarr;</span>
+        </a>
+    </div>
+</li>

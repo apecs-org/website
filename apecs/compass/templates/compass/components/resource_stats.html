@@ -1,0 +1,24 @@
+<div class="bg-white py-6 sm:py-8 dark:bg-gray-900">
+  <div class="mx-auto max-w-4xl px-6 lg:px-8">
+    <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+      <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+        <dt class="text-base/7 text-gray-600 dark:text-gray-400">topical collections</dt>
+        <dd class="order-first text-5xl font-bold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
+            {{ resource_stats.categories }}
+        </dd>
+      </div>
+      <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+        <dt class="text-base/7 text-gray-600 dark:text-gray-400">individual resources</dt>
+        <dd class="order-first text-5xl font-bold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
+            {{ resource_stats.resources }}
+        </dd>
+      </div>
+      <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+        <dt class="text-base/7 text-gray-600 dark:text-gray-400">cryosphere regions</dt>
+        <dd class="order-first text-5xl font-bold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
+            {{ resource_stats.regions }}
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
