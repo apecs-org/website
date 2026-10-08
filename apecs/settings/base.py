@@ -67,6 +67,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
     'django_htmx.middleware.HtmxMiddleware',
+    "posthog.integrations.django.PosthogContextMiddleware",
+    "apecs.core.middleware.PostHogPageviewMiddleware",
 ]
 
 ROOT_URLCONF = 'apecs.urls'
